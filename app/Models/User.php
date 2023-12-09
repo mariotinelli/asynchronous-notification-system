@@ -12,7 +12,9 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements FilamentUser, MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens;
+    use HasFactory;
+    use Notifiable;
 
     protected $fillable = [
         'name',
@@ -27,7 +29,7 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
 
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+        'password'          => 'hashed',
     ];
 
     public function canAccessPanel(Panel $panel): bool

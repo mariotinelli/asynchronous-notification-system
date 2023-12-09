@@ -13,7 +13,7 @@
  * @see https://laravel-lang.com
  */
 
-declare(strict_types=1);
+declare(strict_types = 1);
 
 use LaravelLang\Locales\Enums\Locale;
 
