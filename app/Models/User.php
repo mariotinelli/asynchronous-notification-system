@@ -9,14 +9,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements FilamentUser, MustVerifyEmail
+class User extends Authenticatable implements FilamentUser, MustVerifyEmail, Auditable
 {
     use HasApiTokens;
     use HasFactory;
     use Notifiable;
     use HasRoles;
+    use \OwenIt\Auditing\Auditable;
 
     protected $fillable = [
         'name',
@@ -31,7 +33,7 @@ class User extends Authenticatable implements FilamentUser, MustVerifyEmail
 
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password'          => 'hashed',
+        'password' => 'hashed',
     ];
 
     public function canAccessPanel(Panel $panel): bool

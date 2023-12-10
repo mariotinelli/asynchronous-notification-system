@@ -42,7 +42,14 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+function something(): void
 {
-    // ..
+    function makeAuditNewValues($model): string
+    {
+        $newValues = [];
+        foreach ($model->getAttributes() as $key => $value) {
+            $newValues[$key] = $value;
+        }
+        return json_encode($newValues);
+    }
 }
