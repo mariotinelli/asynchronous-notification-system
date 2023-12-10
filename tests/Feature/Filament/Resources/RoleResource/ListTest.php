@@ -39,8 +39,6 @@ test('can create a role', function () {
         'event' => 'created',
         'old_values' => [],
         'new_values' => makeAuditNewValues($newRole),
-        //'http://localhost/livewire/update'
-        'url' => url(''),
     ]);
 
 });
