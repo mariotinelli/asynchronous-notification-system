@@ -51,7 +51,7 @@ O objetivo principal deste projeto é criar uma plataforma web utilizando Larave
 
 ## 3.1 Acesso Administrador:
 
-Para as permissões e funções será utlizado o laravel permission do spatie:
+Para as permissões e funções será utilizado o laravel permission do spatie:
 https://spatie.be/docs/laravel-permission/v6/introduction
 
 ### 3.1.1 Dashboard:
